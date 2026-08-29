@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI Chatbot Agency — Custom Chatbots That Make Money While You Sleep</title>
+  <meta name="description" content="We build custom AI chatbots that handle customer support, generate leads, and close sales 24/7. Starting at $1,500. Portfolio: 5 live chatbots across finance, sports, education, and entertainment."/>
+  <meta property="og:title" content="AI Chatbot Agency — Custom Chatbots That Convert"/>
+  <meta property="og:description" content="From zero to live chatbot in 2 weeks. We've built 5 production chatbots. Yours next."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0a;--fg:#f5f5f5;--accent:#2563eb;--accent2:#7c3aed;--muted:#888;--card:#161616;--border:#222;--success:#22c55e}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-weight:900;font-size:1.2rem;color:var(--fg)}
+    .nav-brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem;align-items:center}
+    .nav-links a{color:var(--muted);font-size:.875rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--fg);text-decoration:none}
+    .nav-cta{background:var(--accent);color:#fff!important;padding:.5rem 1.25rem;border-radius:8px;font-weight:600;transition:background .2s}
+    .nav-cta:hover{background:#1d4ed8}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative}
+    .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,.15),transparent 70%);pointer-events:none}
+    .hero-content{max-width:800px;position:relative;z-index:1}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.3);padding:.4rem 1rem;border-radius:999px;font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:2rem}
+    .hero-badge .dot{width:6px;height:6px;background:var(--success);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.03em}
+    .hero h1 .highlight{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:1.2rem;color:var(--muted);max-width:600px;margin:0 auto 2.5rem}
+    .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn{padding:.875rem 2rem;border-radius:10px;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:#1d4ed8;text-decoration:none;transform:translateY(-1px)}
+    .btn-secondary{background:var(--card);color:var(--fg);border:1px solid var(--border)}
+    .btn-secondary:hover{border-color:var(--accent);text-decoration:none}
+
+    /* SOCIAL PROOF */
+    .social-proof{display:flex;justify-content:center;gap:3rem;padding:3rem 2rem;flex-wrap:wrap}
+    .sp-stat{text-align:center}
+    .sp-num{font-size:2rem;font-weight:900;color:var(--accent)}
+    .sp-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+    /* SECTION */
+    section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+    .section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:1rem;letter-spacing:-.02em}
+    .section-desc{color:var(--muted);font-size:1.05rem;max-width:600px;margin-bottom:3rem}
+
+    /* PORTFOLIO */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .portfolio-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s}
+    .portfolio-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .pc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+    .pc-icon.finance{background:rgba(34,197,94,.1);color:#22c55e}
+    .pc-icon.sports{background:rgba(251,146,60,.1);color:#fb923c}
+    .pc-icon.education{background:rgba(168,85,247,.1);color:#a855f7}
+    .pc-icon.entertainment{background:rgba(236,72,153,.1);color:#ec4899}
+    .pc-icon.security{background:rgba(59,130,246,.1);color:#3b82f6}
+    .pc-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+    .pc-desc{font-size:.875rem;color:var(--muted);line-height:1.5;margin-bottom:1rem}
+    .pc-tech{display:flex;gap:.5rem;flex-wrap:wrap}
+    .pc-tech span{background:rgba(255,255,255,.05);padding:.2rem .6rem;border-radius:6px;font-size:.7rem;color:var(--muted)}
+
+    /* HOW IT WORKS */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;counter-reset:step}
+    .step{position:relative;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:16px}
+    .step::before{counter-increment:step;content:counter(step);position:absolute;top:-12px;left:1.5rem;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+    .step h3{font-size:1rem;font-weight:700;margin-bottom:.5rem;margin-top:.5rem}
+    .step p{font-size:.85rem;color:var(--muted)}
+
+    /* PRICING */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+    .pricing-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;transition:border-color .3s}
+    .pricing-card.featured{border-color:var(--accent)}
+    .pricing-card.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:.2rem .75rem;border-radius:6px;font-size:.65rem;font-weight:700;letter-spacing:.05em}
+    .pricing-name{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+    .pricing-price{font-size:2.5rem;font-weight:900;margin-bottom:.5rem}
+    .pricing-price span{font-size:.9rem;font-weight:400;color:var(--muted)}
+    .pricing-desc{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+    .pricing-features{list-style:none;margin-bottom:2rem}
+    .pricing-features li{padding:.4rem 0;font-size:.875rem;display:flex;align-items:center;gap:.5rem}
+    .pricing-features li::before{content:'✓';color:var(--success);font-weight:700}
+    .pricing-btn{width:100%;padding:.75rem;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--fg);transition:all .2s}
+    .pricing-btn:hover{border-color:var(--accent);background:rgba(37,99,235,.1)}
+    .pricing-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .pricing-btn.primary:hover{background:#1d4ed8}
+
+    /* CONTACT */
+    .contact-form{max-width:500px}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:var(--muted)}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--fg);font-family:inherit;font-size:.9rem;transition:border-color .2s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-submit{width:100%;padding:.875rem;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:background .2s}
+    .form-submit:hover{background:#1d4ed8}
+
+    /* FOOTER */
+    footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .social-proof{gap:1.5rem}
+      .sp-num{font-size:1.5rem}
+      .hero{padding:5rem 1.5rem 3rem}
+      section{padding:3rem 1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">Bot<span>Forge</span></div>
+  <div class="nav-links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact" class="nav-cta">Get a Demo</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> 5 chatbots live in production</div>
+    <h1>Your Business Never Sleeps.<br><span class="highlight">Neither Does Your AI.</span></h1>
+    <p>We build custom AI chatbots that handle customer support, generate leads, and close sales — 24/7, for a fraction of the cost of a human team.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Get Your Free Demo →</a>
+      <a href="#portfolio" class="btn btn-secondary">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<div class="social-proof">
+  <div class="sp-stat"><div class="sp-num">5</div><div class="sp-label">Live Chatbots</div></div>
+  <div class="sp-stat"><div class="sp-num">3</div><div class="sp-label">AI Models</div></div>
+  <div class="sp-stat"><div class="sp-num">24/7</div><div class="sp-label">Uptime</div></div>
+  <div class="sp-stat"><div class="sp-num">$0</div><div class="sp-label">Monthly Fees</div></div>
+</div>
+
+<section id="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Chatbots We've Built</div>
+  <div class="section-desc">Real chatbots, live in production, serving real users right now.</div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="pc-icon finance">📊</div>
+      <div class="pc-title">MarketPicks.ai</div>
+      <div class="pc-desc">AI market intelligence chatbot with ensemble AI (3 models), real-time data from FRED, GDP, inflation, and Fed funds rate. Answers financial questions with live data.</div>
+      <div class="pc-tech"><span>Groq</span><span>OpenRouter</span><span>Cloudflare Workers</span><span>D1</span></div>
+    </div>
+    <div class="portfolio-card">
+      <div class="pc-icon sports">🏆</div>
+      <div class="pc-title">PlaceBets.ai</div>
+      <div class="pc-desc">Sports prediction chatbot with live odds from The Odds API, political trade tracking, and AI-powered betting insights across 20+ sports.</div>
+      <div class="pc-tech"><span>Groq</span><span>The Odds API</span><span>Congress Data</span><span>Edge Runtime</span></div>
+    </div>
+    <div class="portfolio-card">
+      <div class="pc-icon education">🎓</div>
+      <div class="pc-title">IHateCollege.com</div>
+      <div class="pc-desc">"Professor Debt" — career guidance chatbot trained on trade school data, job market analysis, and ROI comparisons. Helps students make better education decisions.</div>
+      <div class="pc-tech"><span>Groq</span><span>Custom Training</span><span>Cloudflare Pages</span></div>
+    </div>
+    <div class="portfolio-card">
+      <div class="pc-icon entertainment">📺</div>
+      <div class="pc-title">SpanishTVShows.com</div>
+      <div class="pc-desc">Entertainment chatbot for Spanish TV fans — recommends shows, tracks watch history, suggests new series based on viewing preferences.</div>
+      <div class="pc-tech"><span>Groq</span><span>Netflix API</span><span>CF Pages</span></div>
+    </div>
+    <div class="portfolio-card">
+      <div class="pc-icon security">🛡️</div>
+      <div class="pc-title">HiddenCameras.tv</div>
+      <div class="pc-desc">Product recommendation chatbot for home security — compares cameras, doorbells, and alarm systems with real-time pricing and expert reviews.</div>
+      <div class="pc-tech"><span>Groq</span><span>Affiliate Data</span><span>Edge Workers</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-label">Process</div>
+  <div class="section-title">How It Works</div>
+  <div class="section-desc">From zero to live chatbot in under 2 weeks.</div>
+  <div class="steps">
+    <div class="step">
+      <h3>Discovery Call</h3>
+      <p>30-minute call to understand your business, customers, and goals. We'll identify where AI can save you time and money.</p>
+    </div>
+    <div class="step">
+      <h3>Design & Train</h3>
+      <p>We build a custom AI trained on YOUR data — your products, your policies, your brand voice. Not a generic chatbot.</p>
+    </div>
+    <div class="step">
+      <h3>Deploy</h3>
+      <p>One line of code. We embed the chatbot on your website, Shopify store, or any platform. Zero downtime deployment.</p>
+    </div>
+    <div class="step">
+      <h3>Optimize</h3>
+      <p>Monthly tuning based on real conversations. We improve accuracy, add new knowledge, and optimize for conversions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <div class="section-title">Simple, Transparent Pricing</div>
+  <div class="section-desc">No monthly fees. No hidden costs. You own the chatbot.</div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-name">Starter</div>
+      <div class="pricing-price">$1,500 <span>one-time</span></div>
+      <div class="pricing-desc">Perfect for small businesses getting started with AI</div>
+      <ul class="pricing-features">
+        <li>1 custom chatbot</li>
+        <li>Trained on your data</li>
+        <li>Website integration</li>
+        <li>Basic analytics</li>
+        <li>14-day support</li>
+      </ul>
+      <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-name">Professional</div>
+      <div class="pricing-price">$3,000 <span>one-time</span></div>
+      <div class="pricing-desc">For businesses ready to automate at scale</div>
+      <ul class="pricing-features">
+        <li>Everything in Starter</li>
+        <li>Multi-platform (web, Shopify, WhatsApp)</li>
+        <li>Lead capture & CRM integration</li>
+        <li>Advanced analytics dashboard</li>
+        <li>60-day support + optimization</li>
+        <li>A/B testing</li>
+      </ul>
+      <button class="pricing-btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-name">Enterprise</div>
+      <div class="pricing-price">$5,000 <span>+ $500/mo</span></div>
+      <div class="pricing-desc">For teams that need unlimited scale and support</div>
+      <ul class="pricing-features">
+        <li>Everything in Professional</li>
+        <li>Unlimited chatbots</li>
+        <li>API access</li>
+        <li>Priority support (24hr response)</li>
+        <li>Monthly optimization calls</li>
+        <li>Custom integrations</li>
+      </ul>
+      <button class="pricing-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Get Your Free Demo</div>
+  <div class="section-desc">We'll build a demo chatbot for your business in 48 hours — free. If you love it, you buy it.</div>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your name"/>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="you@company.com"/>
+    </div>
+    <div class="form-group">
+      <label for="business">Business / Website</label>
+      <input type="text" id="business" name="business" placeholder="yourcompany.com"/>
+    </div>
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <select id="budget" name="budget">
+        <option value="starter">Starter — $1,500</option>
+        <option value="professional" selected>Professional — $3,000</option>
+        <option value="enterprise">Enterprise — $5,000+</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">What do you need?</label>
+      <textarea id="message" name="message" placeholder="Tell us about your business and what you want the chatbot to do..."></textarea>
+    </div>
+    <button type="submit" class="form-submit">Send Message →</button>
+  </form>
+  <p style="margin-top:1rem;font-size:.8rem;color:var(--muted)">Or email us directly at <a href="mailto:hello@botforge.dev">hello@botforge.dev</a></p>
+</section>
+
+<footer>
+  <p>© 2026 BotForge — AI Chatbot Agency. Built by the team behind MarketPicks.ai, PlaceBets.ai, and 3 other production chatbots.</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  // For now, open mailto with the form data
+  const subject = encodeURIComponent('AI Chatbot Inquiry — ' + (data.business || 'New Client'));
+  const body = encodeURIComponent(
+    'Name: ' + data.name + '\n' +
+    'Email: ' + data.email + '\n' +
+    'Business: ' + (data.business || 'N/A') + '\n' +
+    'Budget: ' + data.budget + '\n' +
+    'Message: ' + (data.message || 'N/A')
+  );
+  window.location.href = 'mailto:hello@botforge.dev?subject=' + subject + '&body=' + body;
+}
+</script>
+
+</body>
+</html>
